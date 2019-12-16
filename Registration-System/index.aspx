@@ -26,13 +26,13 @@
                         <asp:Label ID="PasswordLabel" runat="server" Text="Password"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="PassTxt" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="PassTxt" runat="server" TextMode="Password"></asp:TextBox>
                     </td>
                 </tr>
                  <tr>
                      <td></td>
                     <td>
-                        <asp:Button ID="LoginBnt" runat="server" Text="Login" />
+                        <asp:Button ID="LoginBnt" runat="server" Text="Login" OnClick="Login" />
                     </td>
                 </tr>
                 <tr>
