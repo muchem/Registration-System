@@ -18,7 +18,28 @@ namespace Registration_System
 
         protected void Login(object sender, EventArgs e)
         {
-            Console.WriteLine("Hello");
+            ;
+            using(SqlConnection Connection = new SqlConnection(@"Data Source=localhost;Initial Catalog=LoginDB;Integrated Security=True;"))
+            {
+               Connection.Open();
+               String SqlQuery = "SELECT COUNT(1) FROM [User] WHERE username = @username AND password = @password";
+                
+                SqlCommand sqlCommand = new SqlCommand(SqlQuery,Connection);
+                String UserName = UserTxt.Text.Trim();
+                sqlCommand.Parameters.AddWithValue("@username", UserName);
+                sqlCommand.Parameters.AddWithValue("@password", PassTxt.Text.Trim());
+                 int Results = Convert.ToInt32(sqlCommand.ExecuteScalar());
+                if (Results == 1)
+                {
+                    Session["username"] = UserName;
+                    Response.Redirect("Dashboard.aspx");
+                } 
+                else
+                {
+                    ErrorMessage.Visible = true;
+                }
+
+            }
         }
     }
 }
