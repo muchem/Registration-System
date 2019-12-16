@@ -18,11 +18,11 @@ namespace Registration_System
 
         protected void Login(object sender, EventArgs e)
         {
-            ;
-            using(SqlConnection Connection = new SqlConnection(@"Data Source=localhost;Initial Catalog=LoginDB;Integrated Security=True;"))
+            
+            using(SqlConnection Connection = new SqlConnection(@"Data Source=localhost;Initial Catalog=LoginDB;Integrated Security=SSPI;"))
             {
                Connection.Open();
-               String SqlQuery = "SELECT COUNT(1) FROM [User] WHERE username = @username AND password = @password";
+               String SqlQuery = "SELECT COUNT(1) FROM [User] WHERE Username = @username AND Password = @password";
                 
                 SqlCommand sqlCommand = new SqlCommand(SqlQuery,Connection);
                 String UserName = UserTxt.Text.Trim();

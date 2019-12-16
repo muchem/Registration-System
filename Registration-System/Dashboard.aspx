@@ -11,6 +11,7 @@
         <div>
             <h1><asp:Label ID="greet" runat="server"></asp:Label> </h1>
             <h2>Welcome to your Dashboard</h2>
+            <asp:Button ID="LogoutBnt" runat="server" Text="logout" OnClick="LogoutBnt_Click" />
         </div>
     </form>
 </body>

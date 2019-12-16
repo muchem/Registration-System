@@ -11,7 +11,18 @@ namespace Registration_System
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["username"] == null)
+            {
+                Response.Redirect("index.aspx");
+            }
             greet.Text = "Hello " + Session["username"];
+
+        }
+
+        protected void LogoutBnt_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("index.aspx");
         }
     }
 }
