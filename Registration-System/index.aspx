@@ -13,7 +13,6 @@
                 <tr>
                     <td>
                         <asp:Label ID="UsernameLabel" runat="server" Text="Username"></asp:Label>
-
                     </td>
                     <td>
                         <asp:TextBox ID="UserTxt" runat="server"></asp:TextBox>
@@ -31,6 +30,14 @@
                      <td></td>
                     <td>
                         <asp:Button ID="LoginBnt" runat="server" Text="Login" OnClick="Login" />
+                    </td>
+                </tr>
+                <tr>
+                     <td>
+                         
+                     </td>
+                    <td>
+                        <asp:HyperLink ID="RegisterLn" runat="server" NavigateUrl="~/Register.aspx">Create Account</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
